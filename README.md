@@ -1,2 +1,7 @@
-# WDI_LDN_24_CLASSWORK
-A classwork directory for WDI 24 in London.
+# WDI 24 Classwork Repository
+
+Welcome to your GA London WDI 24 classwork repository! 
+
+We have created this repository to use if you want. If you accidentally spill water on your computer or leave it in a public house somewhere at least you have your classwork backed up.
+
+Use it as often as you want. The more often, the better!
