@@ -9,7 +9,7 @@
   <body>
     <h1>Welcome to the Calculator</h1>
     <form>
-      <input type="number" id ="firstNumber" />
+      <input type="number" id ="firstNumber" placeholder ="First Number"/>
 
         <select id ="operator">
           <option value="+">Add</option>
@@ -17,8 +17,12 @@
           <option value="*">Multiply</option>
           <option value="/">Divide</option>
         </select>
-        
-      <input type="number" id ="firstNumber" />
+
+      <input type="number" id ="secondNumber" placeholder ="Second Number" />
+
+      <input type ="submit" value ="Calculate" />
+
     </form>
+    <div id = "answer"></div>;
   </body>
 </html>
