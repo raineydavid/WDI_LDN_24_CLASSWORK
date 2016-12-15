@@ -12,13 +12,14 @@ app.use(morgan('dev'));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname +'/public'));
 
 app.get('/',function(req, res){
-  res.render('index', {title: 'HOME'});
+  res.render('index', {title: 'home'});
 });
 
 app.get('/',function(req, res){
-  res.render('index', {title: 'About'});
+  res.render('index', {title: 'about'});
 });
 
 app.get('/about',function(req, res){
@@ -28,7 +29,7 @@ app.get('/about',function(req, res){
 
 app.get('*',function(req, res){
   res.writeHead(200, {'content-Type': 'text/plain'});
-  res.end('404');
+  res.end('404. File not found');
 });
 
 app.listen(3000, function() {
