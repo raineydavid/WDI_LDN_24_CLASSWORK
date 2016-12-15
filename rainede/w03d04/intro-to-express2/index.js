@@ -1,11 +1,14 @@
 var express = require('express');
+var morgan = require('morgan');
 var app = express();
 
-//Logging
-app.use(function(req, res, next){
-  console.log('In comes a ' + req.method + 'to ' + req.url);
-  next();
-});
+// //Logging
+// app.use(function(req, res, next){
+//   console.log('In comes a ' + req.method + ' to ' + req.url);
+//   next();
+// });
+
+app.use(morgan('dev'));
 
 app.use(function(req, res){
   res.writeHead(200, {'content-Type': 'text/plain'});
