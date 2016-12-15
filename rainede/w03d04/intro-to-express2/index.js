@@ -10,9 +10,19 @@ var app = express();
 
 app.use(morgan('dev'));
 
-app.use(function(req, res){
+app.get('/',function(req, res){
   res.writeHead(200, {'content-Type': 'text/plain'});
-  res.end('Hello world');
+  res.end('Home');
+});
+
+app.get('/about',function(req, res){
+  res.writeHead(200, {'content-Type': 'text/plain'});
+  res.end('About');
+});
+
+app.get('*',function(req, res){
+  res.writeHead(200, {'content-Type': 'text/plain'});
+  res.end('404');
 });
 
 app.listen(3000, function() {
