@@ -4,7 +4,7 @@ var http = require('http');
 var app = http.createServer(function(req, res) {
   if(req.url === '/'){
     res.writeHead(200, {'content-Type': 'text/plain'});
-    res.end('Welcome to the homepage');
+    res.end('<h1>Welcome to the homepage</h1>');
   } else if (req.url === 'about'){
     res.writeHead(200, {'content-Type': 'text/plain'});
     res.end('Welcome to the about page');
