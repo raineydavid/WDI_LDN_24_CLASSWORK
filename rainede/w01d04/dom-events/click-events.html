@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title>Click Events</title>
+<head></head>
+<body>
+  <button onclick="alert('Hello WDI!');">I'm an inline button!</button>
+  <button id="click">click</button>
+  <button id="dblclick">dblclick</button>
+  <button id="mousedown_mouseup">Mousedown Mouseup</button>
+  <button id="add_element">Add</button>
+
+  <script type="text/javascript">
+
+  document.getElementById('click').addEventListener('click', function(){
+    alert('This has been clicked');
+  })
+
+  document.getElementById('dblclick').addEventListener('dblclick', function(){
+    alert('This has been double clicked');
+  })
+  document.getElementById('mousedown_mouseup').addEventListener('mousedown', function(){
+    console.log('mousedown');
+  })
+  document.getElementById('mousedown_mouseup').addEventListener('mouseup', function(){
+    // alert('mousedown');
+    console.log('mouseup');
+  })
+  document.getElementById('add_element').addEventListener('add_element', function(){
+    // alert('This has been clicked');
+      console.log('mousedown');
+  })
+  </script>
+</body>
+</html>

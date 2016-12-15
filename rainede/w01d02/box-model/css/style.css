@@ -1,0 +1,39 @@
+#container {
+  position: relative;
+   height: 500px;
+   width: 500px;
+   background-color: gray;
+}
+#square1 {
+   background-color: red;
+   height: 100px;
+   width: 100px;
+}
+#square2 {
+   background-color: blue;
+   height: 100px;
+   width: 100px;
+}
+#square3 {
+  position: absolute;
+  top:0;
+  left:0;
+   background-color: green;
+   height: 100px;
+   width: 100px;
+}
+#square4 {
+   background-color: black;
+   height: 100px;
+   width: 100px;
+}
+
+div {
+  margin: 0 auto;
+}
+
+ul li {
+  display: inline-block;
+  padding: 5px;
+
+}

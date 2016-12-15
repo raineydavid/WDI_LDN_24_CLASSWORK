@@ -1,0 +1,27 @@
+body {
+
+margin: 0 auto;
+text-align: center;
+
+}
+
+ul.grid {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+  width: 600px;
+  height: 600px;
+}
+
+li {
+list-style-type: none;
+width: 198px;
+height: 198px;
+border: 1px solid #000;
+float: left;
+color: #fff;
+
+}
+
+.X { background: red;}
+.O {background: blue;}

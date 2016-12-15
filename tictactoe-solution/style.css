@@ -1,0 +1,19 @@
+body{
+
+margin: 0 auto;
+text-align: center;
+
+}
+
+ul.grid {
+  width: 600px;
+  height: 600px;
+}
+
+li {
+width: 198px;
+height: 198px;
+bosrder: 1pc solid 000;
+float: left;
+
+}
