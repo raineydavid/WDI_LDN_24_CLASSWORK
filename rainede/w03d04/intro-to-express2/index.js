@@ -10,9 +10,15 @@ var app = express();
 
 app.use(morgan('dev'));
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 app.get('/',function(req, res){
-  res.writeHead(200, {'content-Type': 'text/plain'});
-  res.end('Home');
+  res.render('index', {title: 'HOME'});
+});
+
+app.get('/',function(req, res){
+  res.render('index', {title: 'About'});
 });
 
 app.get('/about',function(req, res){
