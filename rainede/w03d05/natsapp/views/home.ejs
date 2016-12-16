@@ -5,8 +5,11 @@
     <title>Home</title>
   </head>
   <body>
-    <% var a ='Hello' %>
-    <h1><%=a %></h1>
+    <ul>
+    <% ['Bob', 'Claire', 'Micky', 'Sandra'].forEach(function(name){ %>
+      <li><h2><%= name %></h2></li>
+    <% }); %>
+    </ul>
     <h1>Welcome to Nat's website to get on her favorite show!</h1>
   </body>
 </html>
