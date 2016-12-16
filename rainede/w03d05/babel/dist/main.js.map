@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/main.js"],"names":["log","console"],"mappings":";;AAAA,IAAMA,MAAK,aAAX;AACAC,QAAQD,GAAR,qBAA8BA,GAA9B","file":"main.js","sourcesContent":["const log ='Hello world';\nconsole.log(`so much better ${log}`);\n"]}
