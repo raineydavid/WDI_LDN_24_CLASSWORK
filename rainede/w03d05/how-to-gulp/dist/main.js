@@ -7,3 +7,7 @@ var sayName = function sayName(name) {
 };
 
 sayName(name);
+
+var log = 'pub';
+
+console.log('Cant wait to go to the ' + log);

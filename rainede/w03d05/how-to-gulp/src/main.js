@@ -5,3 +5,7 @@ const sayName = (name) => {
 };
 
 sayName(name);
+
+const log = 'pub';
+
+console.log(`Cant wait to go to the ${log}`);
