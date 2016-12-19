@@ -1,5 +1,6 @@
-const express   = require ('express');
-const morgan    = require ('morgan');
+const express     = require ('express');
+const morgan      = require ('morgan');
+const bodyParser  = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,10 +11,14 @@ app.set('views', `${__dirname}/views`);
 //use morgan by app.use , express is basically middleware
 app.use(morgan('dev'));
 app.use(express.static(`${__dirname}/public`));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 //route handler
+// all routes start with /
 // app.get('/', (req,res) => res.send('hello world'));
 app.get('/', (req,res) => res.render('home'));
+
+
+app.get('/users/new', (req, res) => res.render('users/new'));
 
 app.get('/users/:id', (req,res) => {
   const user = {
@@ -22,14 +27,7 @@ app.get('/users/:id', (req,res) => {
   return res.render('users/show', {user: user});
 });
 
-//
-// app.get('/users/:id', (req, res) => res.render('users/show', {user: req.params));
+//body content of html when you make a post
+app.post('/users' , (req, res) => console.log(req.body));
 
-// //patterned url
-// app.get('/users/:id', (req, res) => console.log(req.params));
-// //similar to params, optional... searching for stuff after ?
-// app.get('/users/:id', (req, res) => console.log(req.query));
-
-
-//proxy method for the http server create method
 app.listen(port, () => console.log(`Express has started on port: ${port}`));
