@@ -1,13 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-
-let foods = [
-  { id: 0, name: 'Sushiritto', yumminess: 'quite' },
-  { id: 1, name: 'Green Eggs & Ham', yumminess: 'Sure!' },
-  { id: 2, name: 'Crayfish', yumminess: 'Depending...' },
-  { id: 3, name: 'Foie Gras', yumminess: 'omg' },
-  { id: 4, name: 'Kale', yumminess: 'meh' }
-];
+const foodsController  = require('../controllers/foodsController');
 
 // root path
 router.get('/', (req, res) => {
@@ -15,56 +8,42 @@ router.get('/', (req, res) => {
 });
 
 // Food Restful routes
+//
+// // INDEX
+// router.get('/foods',foodsController.index );
+//
+// // NEW
+// router.get('/foods/new',foodsController.new);
+//
+// // CREATE
+// router.post('/foods',foodsController.edit );
+//
+// // SHOW
+// router.get('/foods/:id', foodsController.show);
+//
+// // EDIT
+// router.get('/foods/:id/edit', foodsController.edit );
+//
+// // UPDATE
+// router.put('/foods/:id',foodsController.update );
+//
+// // DELETE
+// router.delete('/foods/:id',foodsController.delete );
 
-// INDEX
-router.get('/foods', (req, res) => {
-  res.render('foods/index', { foods });
-});
+// router.route('/foods').get(foodsController.index).post(foodsController.create);
+router.route('/foods')
+.get(foodsController.index)
+.post(foodsController.create);
 
-// NEW
-router.get('/foods/new', (req, res) => {
-  res.render('foods/new');
-});
+router.route('foods/new')
+.get(foodsController.new);
 
-// CREATE
-router.post('/foods', (req, res) => {
-  let food = req.body.food;
-  food.id = foods.length;
-  foods.push(food);
-  res.redirect(302, '/foods');
-});
+router.route('foods/:id')
+.get(foodsController.show)
+.put(foodsController.update)
+.delete(foodsController.delete);
 
-// SHOW
-router.get('/foods/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const food = foods[id];
-  res.render('foods/show', { food });
-});
-
-// EDIT
-router.get('/foods/:id/edit', (req, res) => {
-  const id = parseInt(req.params.id);
-  res.render('foods/edit', { food: foods[id] });
-});
-
-// UPDATE
-router.put('/foods/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  let food = req.body.food;
-  food.id  = id;
-  foods[id] = food;
-  res.redirect(302, `/foods/${id}`);
-});
-
-// DELETE
-router.delete('/foods/:id', (req, res) => {
-  const id = req.params.id;
-  foods.splice(id, 1);
-  foods = foods.map(food => {
-    food.id--;
-    return food;
-  });
-  res.redirect(302, '/');
-});
+router.route('foods/:id/edit')
+.get(foodsController.edit);
 
 module.exports = router;

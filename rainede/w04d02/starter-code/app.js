@@ -20,7 +20,7 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Use methodOverride
-app.use(methodOverride (req => {
+app.use(methodOverride(req => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body){
     const method = req.body._method;
     delete req.body._method;

@@ -1,0 +1,17 @@
+{
+  "name": "gulp-sass-lesson",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "rainede <rainey@techgiver.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rainede/WDI_LDN_24_CLASSWORK",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
