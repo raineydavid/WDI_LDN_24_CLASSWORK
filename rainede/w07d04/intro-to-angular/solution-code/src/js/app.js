@@ -4,8 +4,9 @@ angular
 
  //Name of fn, $ inject, string of function in an array
 
-HomeCtrl.$inject =['$scope'];
-function HomeCtrl($scope){
-  console.log('Hi');
-  $scope.awesome ='This is awesome';
+HomeCtrl.$inject =[];
+function HomeCtrl(){
+  this.awesome  ='This is awesome';
+  this.numbers =[1,2,3,4];
+
 }
