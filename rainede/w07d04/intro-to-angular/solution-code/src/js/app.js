@@ -6,7 +6,8 @@ angular
 
 HomeCtrl.$inject =[];
 function HomeCtrl(){
-  this.awesome  ='This is awesome';
-  this.numbers =[1,2,3,4];
+  var vm =this;
+  vm.awesome  ='This is awesome';
+  vm.numbers =[1,2,3,4];
 
 }
