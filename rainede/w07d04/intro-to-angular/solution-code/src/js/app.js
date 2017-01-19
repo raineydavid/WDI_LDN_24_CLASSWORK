@@ -7,4 +7,5 @@ angular
 HomeCtrl.$inject =['$scope'];
 function HomeCtrl($scope){
   console.log('Hi');
+  $scope.awesome ='This is awesome';
 }

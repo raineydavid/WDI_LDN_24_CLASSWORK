@@ -19,6 +19,6 @@
 
 $(function(){
   console.log(document.getElementById('container'));
-  console.log($(''#container'));
-  
+  console.log($(#container');
+
 });
