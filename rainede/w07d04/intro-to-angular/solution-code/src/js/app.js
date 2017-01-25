@@ -9,5 +9,12 @@ function HomeCtrl(){
   var vm =this;
   vm.awesome  ='This is awesome';
   vm.numbers =[1,2,3,4];
+  vm.beds =[{
+    name: 'comfy'
+  },{
+    name: 'FIRM'
+  },{
+    name:'squishy'
+  }];
 
 }

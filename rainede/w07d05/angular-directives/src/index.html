@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="happyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Happiness Tracker</title>
+    <!-- inject:js -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="HappyAppCtrl as happy">
+    <header>
+      <h1>HAPPYAPP(TM)</h1>
+      <h3>General average happiness over time, since 1993</h3>
+    </header>
+    <main >
+      <ul>
+        <li ng-repeat ="emotion in happy.emotion track by $index">
+
+
+
+        <button ng-click="happy.addEmotion(emotion)">{{emotion.rating}}</button>
+        </li>
+
+      </ul>
+        <form id="addEmotion" ng-model="happyapp.newEmotion.rating">
+          <output name="result">How's your happiness today?</output>
+          <output name="result">Click one to pick then save!</output>
+          <li ng-repeat ="emotion in emotion.rating">
+            <button ng-click ="emotion in emotion.rating">{{emotion.rating.addEmotion}}</button>
+          </li>
+          <input type="submit" value="Save My Happiness">
+        </form>
+
+
+    </main>
+    <!-- inject:css -->
+    <!-- endinject -->
+  </body>
+</html>

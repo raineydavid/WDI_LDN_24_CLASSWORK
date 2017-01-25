@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app = "toDoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Directives Lesson</title>
+    <!-- inject:js -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="ToDosCtrl as todos">
+    <header>
+      <h1>Angular Todo App</h1>
+      <h3>You have {{todos.items.length}} todos todo!</h3>
+    </header>
+    <main>
+      <!-- {{todos.newItem}} -->
+      <form class="addTodo" ng-submit = "todos.addItem()">
+        <!-- ng model initialises the two way databinging -->
+        <input type="text" placeholder="What do you need to do?" ng-model ="todos.newItem.task">
+        <input type="submit" value="Add">
+      </form>
+      <p ng-if="todos.newItem.task">About to add: <strong>{{todos.newItem.task}}</strong></p>
+      <ul>
+
+        <li ng-repeat ="item in todos.items" ng-if = "!item.task.done">
+
+            <p>{{item.task}}</p>
+            <button ng-click="todos.done(item)">X</button>
+
+        </li>
+
+      </ul>
+    </main>
+
+    <!-- inject:css -->
+    <!-- endinject -->
+  </body>
+</html>

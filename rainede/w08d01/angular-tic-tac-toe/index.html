@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="tictactoe" ng-strict-dir>
+  <head>
+    <meta charset="utf-8">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-controller="MainCtrl as main">
+    <ul>
+      <li
+        ng-repeat="square in main.squares track by $index"
+        ng-click ="main.move($index)"
+        ng-class ="square">
+        {{square}}
+      </li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>
