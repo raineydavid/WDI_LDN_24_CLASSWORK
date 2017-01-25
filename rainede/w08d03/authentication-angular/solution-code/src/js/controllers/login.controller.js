@@ -2,8 +2,8 @@ angular
   .module('angularAuthentication')
   .controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.$inject = ['User'];
-function LoginCtrl(User) {
+LoginCtrl.$inject = ['User', 'CurrentUserService'];
+function LoginCtrl(User, CurrentUserService) {
   const vm = this;
 
   vm.login = () =>{
