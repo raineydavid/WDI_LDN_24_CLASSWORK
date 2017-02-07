@@ -2,16 +2,16 @@ angular
   .module('angularAuthentication')
   .controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.$inject = ['User', 'CurrentUserService'];
-function LoginCtrl(User, CurrentUserService) {
+LoginCtrl.$inject = ['User', '$rootScope'];
+function LoginCtrl(User, $rootScope) {
   const vm = this;
 
   vm.login = () =>{
     User
       .login(vm.user).$promise
       .then(data =>{
-        console.log(data);
-      //  TokenService.setToken(data.token);
+        console.log('Successfully logged in');
+        $rootScope.$broadcast('loggedIn');
       }, err =>{
         console.log(err);
       });
