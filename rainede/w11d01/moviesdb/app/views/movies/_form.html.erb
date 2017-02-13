@@ -26,6 +26,11 @@
     <%= f.collection_select :director_id, Director.all, :id, :name %>
   </div>
 
+  <div class="field">
+    <%= f.label "Genres" %>
+    <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -9,8 +9,9 @@
 
 Director.destroy_all
 Movie.destroy_all
+Genre.destroy_all
 
-Director.create([
+Director.create!([
   {
     name: "Steven Spielberg",
     image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Steven_Spielberg_Cannes_2013_3.jpg"
@@ -21,21 +22,38 @@ Director.create([
   }
 ])
 
-Movie.create([
+Movie.create!([
   {
     title: "E.T",
     poster: "http://img.moviepostershop.com/et--the-extra-terrestrial-movie-poster-1982-1020141470.jpg",
-    director_id: 1
+    director_id: Director.first.id
   },
   {
     title: "Jaws",
     poster: "https://www.movieposter.com/posters/archive/main/37/MPW-18721",
-    director_id: 1
+    director_id: Director.first.id
   },
   {
     title: "Django Unchained",
     poster: "https://upload.wikimedia.org/wikipedia/en/8/8b/Django_Unchained_Poster.jpg",
-    director_id: 2
+    director_id: Director.last.id
   }
 ])
- 
+
+Genre.create!([
+  {
+    name: "Action/Adventure"
+  },
+  {
+    name: "Comedy"
+  },
+  {
+    name: "Drama"
+  },
+  {
+    name: "Sci-Fi"
+  },
+  {
+    name: "Chick Flicks"
+  }
+  ])
