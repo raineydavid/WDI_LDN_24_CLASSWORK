@@ -1,0 +1,25 @@
+class UsersController < ApplicationController
+  def index
+    @users =User.all
+  end
+  #Register form
+  def new
+    @user = User.new
+  end
+  # Actually create a user
+  def create
+    @user = User.new user_params
+    if @user.save
+      redirect_to_users_path
+    else
+      render "new"
+    end
+  end
+
+
+  private
+
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+end

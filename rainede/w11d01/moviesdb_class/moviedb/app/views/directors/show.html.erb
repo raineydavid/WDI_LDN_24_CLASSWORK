@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @director.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @director.image %>
+</p>
+
+<p>
+  <strong>Movies:</strong>
+  <ul>
+    <% @director.movies.each do |movie| %>
+      <li>
+        <%= image_tag movie.poster, width: "100" %>
+        <p><%= movie.title %></p>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_director_path(@director) %> |
+<%= link_to 'Back', directors_path %>
