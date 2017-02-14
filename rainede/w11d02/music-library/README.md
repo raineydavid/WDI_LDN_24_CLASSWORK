@@ -26,5 +26,5 @@ $ rails new music_library -d postgresql
 $ rails g scaffold Artist name
 $ rails g scaffold Album title description:text release_date: date artist_id:integer
 $ rails g scaffold Track title number:integer duration:float{5,2} album:references
-$ rails g migration CreateJoinTableArtistsTRacks artist track
+$ rails g migration CreateJoinTableArtistsTracks artist track
 ```

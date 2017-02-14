@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources: :users only: [:index, :create]
+  resources :users, only: [:index, :create]
   get '/register', to: "users#new"
   # get 'users/index'
   #
