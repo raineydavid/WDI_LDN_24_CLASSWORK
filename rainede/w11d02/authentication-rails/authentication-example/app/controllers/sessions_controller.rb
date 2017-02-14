@@ -8,11 +8,12 @@ class SessionsController < ApplicationController
     # Is there a user?
     # If there is a user, check that the password matches the password_digest
     if @user && @user.authenticate(params[:password])
-    # If it does - Yay
+      # If it does - Yay
       redirect_to users_path
-    # If it doesn't - Boo, render :new with error messages
+      # If it doesn't - Boo, render :new with error messages
     else
-      render :new
+      flash[:error] = "Something went wrong yo."
+      redirect_to login_path
     end
   end
 
