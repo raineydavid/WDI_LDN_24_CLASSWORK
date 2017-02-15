@@ -11,7 +11,7 @@ class Movie < ApplicationRecord
   validates :title, length: {minimum: 2}
   validates :title, length: {maximum: 2}
   #Both in one line
-  validate :title, length: {in: 2..100}
+  validates :title, length: {in: 2..100}
 
   #Unique
   validates :title, uniqueness: true
